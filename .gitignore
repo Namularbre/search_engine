@@ -1,3 +1,4 @@
 .idea
 search_motor.iml
 .env
+node_modules
