@@ -1,0 +1,19 @@
+extends ../index
+
+block body
+    if results.length !== 0
+        include searchForm
+        .container.mt-3
+            for result in results
+                .search-result
+                    a(href=result.url.split('?')[0])= result.url.split('?')[0]
+                    p=result.score
+            div.pagination
+                if page > 0
+                    a.page-link(href=`/search?keywords=${keywords}&page=${parseInt(page) - 1}`) <
+                if page < totalPages / 20 && totalPages > 1
+                    a.page-link(href=`/search?keywords=${keywords}&page=${parseInt(page) + 1}`) >
+    else
+        .container.mt-3
+            p Enable to found something related in the database !
+    a.btn.btn-secondary.m-3(href="/") Home

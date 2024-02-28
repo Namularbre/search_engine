@@ -1,0 +1,9 @@
+extends ../index
+block body
+    h1 Search engine
+    p the engine to search online things you want to find!
+    form(action='/search' method='GET')
+        .mb-3
+            label.form-label(for="keywords") Your search:
+            input.form-control(type="text" name="keywords" placeholder="2024" required)#keywords
+        button.btn.btn-primary(type="submit") Search
